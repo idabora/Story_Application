@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="logo">
+        <img src="../logo9898.png" alt="">
+    </div>
+    <div class="navlinks">
+        <ul class="links">
+            {{#if val}}
+            <li id="link"><a href="/stories">Public Stories</a></li>
+            <li id="link"><a href="/stories/add">Add Story</a></li>
+            <li id="link"><a href="/about">About Us</a></li>
+            <li id="link"><a href="/auth/logout">Logout</a></li>
+            <li id="link"><a href="/dashboard"><img src="{{DP}}" alt="DP" class="image"></a></li>
+            {{else }}
+            <li id="link"><a>About Us</a></li>
+            <li id="link"><a>Contact Us</a></li>
+            {{/if }}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!--
+    <link rel="stylesheet" href="../dashboard.css"> --}}
+    {{!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/6.1.3/esm/ionicons.min.js"
+        integrity="sha512-J4LkJr/AeK/KXjqkfb/65C4jzT4gG7BDqH9OtiOzCmULhWdKGppS3dCCzo0bmFULnZkajr4esopJYYLOLzuznw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+    {{>link}}
+    <title>Public stories</title>
+</head>
+
+<body>
+    {{>header}}
+    {{!-- <a href="/auth/logout">LOGOUT</a> --}}
+    {{!-- <div class="body"> --}}
+        {{#if Stories}}
+        <div class="storyContainer">
+            {{#each Stories}}
+            <div class="card">
+                <div class="info">
+                    <a href='/stories/{{_id}}' class="storyTitle">
+                        <h2> {{title}} </h2>
+                    </a>
+                    {{!-- <p class="status"> {{status}} </p> --}}
+                    <div id="share">
+                        <p class="date status"> {{createdAt}} </p>
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="contentbody">
+                        {{body}}
+                    </p>
+                </div>
+                <div class="edits" style="justify-content:flex-start;">
+                    <a href="/stories/read/{{_id}}" class="child" style=" margin:10px 5px;">Read More</a>
+                </div>
+                {{!-- to delete insert a tag later --}}
+            </div>
+            {{/each}}
+        </div>
+    {{!-- </div> --}}
+    {{else}}
+    <p>No stories to display</p>
+    {{/if }}
+    {{>footer}}
+    <script src="script.js"></script>
+</body>
+
+</html>
